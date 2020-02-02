@@ -1,0 +1,42 @@
+#%RAML 1.0
+title: sample-api-project
+version: v1.0
+baseUri: http://sample-api.com/sample-project
+mediaType: 
+  - application/json
+protocols: HTTP
+
+/financeInfo:
+  get:
+    queryParameters:
+      Id:
+        type: string
+        required: false
+      Name:
+        type: string
+        required: false
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "Message": "We are Successfully retrive the data"
+              }
+  post:
+    body:
+      application/json:
+        example:
+          {
+            "Id": "Ramu123",
+            "Name": "RAMMOHAN"
+          }  
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              {
+                "Message": "We are successfully inserted the data"
+              }          
+                
